@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SNAKE</title>
+
+  <link rel="stylesheet" href="styles/styles.css">
+
+
+
+
+</head>
+
+<body>
+
+  <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAxnhvMXQhSFmZJfyTWExcAD63RF6JLpuQ",
+      authDomain: "snake-733fa.firebaseapp.com",
+      databaseURL: "https://snake-733fa.firebaseio.com",
+      projectId: "snake-733fa",
+      storageBucket: "snake-733fa.appspot.com",
+      messagingSenderId: "807913733198"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.dom.min.js'></script>
+  <script src="js/snake.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
