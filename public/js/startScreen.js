@@ -5,7 +5,7 @@ function startScreen() {
   var name = 'SNAKE';
   textSize(50);
   fill(snakeColour);
-  nameWidth = textWidth(name);
+  var nameWidth = textWidth(name);
   text(name, (width - nameWidth)/2, height/2 - 40);
 
   var startBtn = createButton('Start Game');
@@ -24,7 +24,7 @@ function highscore() {
   var name = 'HIGH SCORES';
   textSize(50);
   fill(snakeColour);
-  nameWidth = textWidth(name);
+  var nameWidth = textWidth(name);
   text(name, (width - nameWidth)/2, height/2 - 100);
 
   var backBtn = createButton('back');
@@ -38,7 +38,7 @@ function highscore() {
 
 function getScores() {
 
-  var ref = db.ref("scores").orderByChild("score").limitToLast(2)
+  var ref = db.ref("scores").orderByChild("score").limitToLast(10)
   ref.once("value")
     .then(function(snapshot) {
       console.log('val', snapshot.val());
@@ -49,5 +49,13 @@ function getScores() {
       }).reverse()
 
       console.log('arr', scoresArray);
+
+      scoresArray.forEach((score, index) => {
+        textSize(30);
+        fill(snakeColour);
+        var scoreText = `${score.name}    ${score.score}`
+        var scoreWidth = textWidth(scoreText);
+        text(scoreText, (width - scoreWidth)/2, height/2 - 40 + index*30);
+      })
     });
 }
