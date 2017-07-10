@@ -25,7 +25,7 @@ function highscore() {
   textSize(50);
   fill(snakeColour);
   var nameWidth = textWidth(name);
-  text(name, (width - nameWidth)/2, height/2 - 100);
+  text(name, (width - nameWidth)/2, height/2 - 200);
 
   var backBtn = createButton('back');
   backBtn.position(width/2 - backBtn.width/2, height/2+100);
@@ -46,16 +46,16 @@ function getScores() {
       var scores = snapshot.val()
       var scoresArray = Object.keys(scores).map((key) => {
         return scores[key]
-      }).reverse()
+      }).sort((scoreA, scoreB) => scoreA.score < scoreB.score)
 
       console.log('arr', scoresArray);
 
       scoresArray.forEach((score, index) => {
-        textSize(30);
+        textSize(25);
         fill(snakeColour);
         var scoreText = `${score.name}    ${score.score}`
         var scoreWidth = textWidth(scoreText);
-        text(scoreText, (width - scoreWidth)/2, height/2 - 40 + index*30);
+        text(scoreText, (width - scoreWidth)/2, height/2 - 140 + index*30);
       })
     });
 }
