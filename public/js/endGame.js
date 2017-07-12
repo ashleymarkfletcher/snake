@@ -8,23 +8,28 @@ function endGame(){
 	var score = 'Your Score is ' + snake.tail.length;
   var nameMessage = 'Enter Your Name';
 
-	msgWidth = textWidth(msg);
-	scoreWidth = textWidth(score);
-	fill(snakeColour);
-	text(msg, (width - msgWidth)/2, height/2 - 40);
-	text(score, (width - scoreWidth)/2, height/2);
-	var startBtn = createButton('Restart Game');
-	startBtn.position(width/2 - startBtn.width/2, height/2 + 40);
-	startBtn.mousePressed(startScreen);
+	var msgWidth = textWidth(msg);
+	var scoreWidth = textWidth(score);
+	var nameMessageWidth = textWidth(nameMessage);
 
-  text(nameMessage, width/2, height/2 + 70);
+	fill(snakeColour);
+	text(msg, (width - msgWidth)/2, height/2 - 140);
+	text(score, (width - scoreWidth)/2, height/2 - 100);
+
+
+	// var startBtn = createButton('Restart Game');
+	// startBtn.position(width/2 - startBtn.width/2, height/2 - 40);
+	// startBtn.mousePressed(startScreen);
+
+  text(nameMessage, (width - nameMessageWidth)/2, height/2);
 
   var inp = createInput('');
   inp.input(myInputEvent);
-  inp.position(width/2 - inp.width/2, height/2 + 100);
+  inp.position(width/2 - inp.width/2, height/2 + 40);
+	inp.attribute("maxlength", "4");
 
-  var saveName = createButton('Save');
-  saveName.position(width/2 - saveName.width/2, height/2 + 130);
+  var saveName = createButton('Save Score');
+  saveName.position(width/2 - saveName.width/2, height/2 + 90);
   saveName.mousePressed(saveScore);
 	noLoop();
 }
