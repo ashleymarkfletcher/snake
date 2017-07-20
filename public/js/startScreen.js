@@ -8,13 +8,21 @@ function startScreen() {
   var nameWidth = textWidth(name)
   text(name, (width - nameWidth)/2, height/2 - 40)
 
-  var startBtn = createButton('Start Game')
+  var startBtn = createButton('START GAME')
   startBtn.position(width/2 - startBtn.width/2, height/2)
   startBtn.mousePressed(initGame)
+  startBtn.style('background', '#2D4606')
+  startBtn.style('color', '#86B101')
+  startBtn.style('border', '2px solid #2D4606')
 
   var highscoreBtn = createButton('High Scores')
-  highscoreBtn.position(width/2 - startBtn.width/2, height/2+100)
+  highscoreBtn.position(width/2 - highscoreBtn.width/2, height/2+100)
   highscoreBtn.mousePressed(highscore)
+
+  highscoreBtn.style('background', '#2D4606')
+  highscoreBtn.style('color', '#86B101')
+  highscoreBtn.style('border', '2px solid #2D4606')
+
   noLoop()
 }
 

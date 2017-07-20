@@ -28,9 +28,17 @@ function endGame(){
   inp.position(width/2 - inp.width/2, height/2 + 40);
 	inp.attribute("maxlength", "4");
 
-  var saveName = createButton('Save Score');
+	inp.style('background', '#86B101')
+	inp.style('color', '#2D4606')
+	inp.style('border', '2px solid #2D4606')
+
+  var saveName = createButton('SAVE SCORE');
   saveName.position(width/2 - saveName.width/2, height/2 + 90);
   saveName.mousePressed(saveScore);
+
+	saveName.style('background', '#2D4606')
+	saveName.style('color', '#86B101')
+	saveName.style('border', '2px solid #2D4606')
 	noLoop();
 }
 

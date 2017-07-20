@@ -15,14 +15,15 @@ function setup() {
   // strokeCap(SQUARE)
   // rectMode(CENTER)
   frameRate(10)
-  // snake = new Snake()
   noStroke()
+
 }
 
 function draw() {
   // background(211, 242, 236);
   // background(240, 240, 240);
   background(screenColour);
+
 
   if (gameState === 'start') {
     startScreen()
