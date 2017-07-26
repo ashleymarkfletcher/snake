@@ -39,6 +39,11 @@ function highscore() {
   backBtn.position(width/2 - backBtn.width/2, height/2 + 140)
   backBtn.mousePressed(startScreen)
 
+  backBtn.style('background', '#2D4606')
+  backBtn.style('color', '#86B101')
+  backBtn.style('border', '2px solid #2D4606')
+
+
   getScores()
 
   noLoop()
