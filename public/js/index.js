@@ -6,7 +6,8 @@ var screenColour = [134, 177, 1]
 var snakeColour = [45, 70, 6]
 
 function setup() {
-  createCanvas(500, 500);
+  const canvas = createCanvas(500, 500);
+  canvas.parent('p5');
   // background(211, 242, 236);
   // // stroke(0)
   // stroke(211, 242, 236)
