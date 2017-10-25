@@ -1,5 +1,5 @@
 var snake
-var scl = 20
+const scl = 20
 var food
 var gameState = 'start';
 var screenColour = [134, 177, 1]
@@ -63,8 +63,8 @@ function initGame() {
 
 // pick the random location for food
 function pickLocation(){
-  var cols = floor(width/scl)
-  var rows = floor(height/scl)
+  const cols = floor(width/scl)
+  const rows = floor(height/scl)
 
   food = createVector(floor(random(cols)), floor(random(rows)), scl, scl)
   food.mult(scl)
@@ -72,8 +72,8 @@ function pickLocation(){
 
 // display the food
 function showFood() {
-  var third = scl * 0.3
-  var twoThirds = scl * 0.6
+  const third = scl * 0.3
+  const twoThirds = scl * 0.6
   rect(food.x + third, food.y, third, third)
   rect(food.x, food.y + third, third, third)
   rect(food.x + third, food.y + twoThirds, third, third)
